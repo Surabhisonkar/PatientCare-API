@@ -1,3 +1,2 @@
-# Doctor-Patient-API
-Deals with mapping the patients with their respective doctors and their nearby cities , also includes
-mapping complexities and also handling every possible exception.
+# PatientCare-API
+The project involves mapping patients with their respective doctors based on symptoms and diseases, taking into account doctor availability in the patient's city. It also encompasses handling mapping complexities and comprehensive exception management.
