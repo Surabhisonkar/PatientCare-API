@@ -1,6 +1,5 @@
 package com.project.services.impl;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -79,16 +78,17 @@ public class DoctorServiceImpl implements DoctorService {
 		return docRepo.findByCityAndSpeciality(city, sym);
 	}
 	
+	private static final Map<String, String> SYMPTOM_TO_SPECIALITY = Map.of(
+			"Arthritis", "Orthopedic",
+			"Backpain", "Orthopedic",
+			"Tissue injuries", "Orthopedic",
+			"Dysmenorrhea", "Gynecology",
+			"Skin infection", "Dermatology",
+			"Skin burn", "Dermatology",
+			"Ear pain", "ENT");
+
 	private String mapSymptomToSpecialty(String symptom) {
-		Map<String, String> myMap = new HashMap<String, String>() {{
-		    put("Arthritis,", "Orthopedic");
-		    put("Backpain,", "Orthopedic");
-		    put("Dysmenorrhea,", "Gynecology");
-		    put("Ear pain", "ENT");
-		    
-		}};
-		
-        return myMap.get(symptom);
-    }
+		return SYMPTOM_TO_SPECIALITY.get(symptom);
+	}
 
 }
